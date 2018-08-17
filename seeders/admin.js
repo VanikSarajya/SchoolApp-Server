@@ -6,13 +6,13 @@ const {admins} = require('../models/index');
 module.exports = {
     up: (queryInterface, Sequelize) => {
         return queryInterface.bulkInsert('admins',[{
-            email: "vaniksarajyan@gmail.com",
+            email: process.env.ADMIN_EMAIL,
             password: bcrypt.hashSync(process.env.ADMIN_PASSWORD, 8),
-            firstName: "Vanik",
-            lastName: "Sarajyan"
+            firstName: process.env.ADMIN_FIRSTNAME,
+            lastName: process.env.ADMIN_LASTNAME
         }], {});
     },
     down: (queryInterface, Sequelize) => {
-        return admins.destroy({where: {email: "vaniksarajyan@gmail.com"}});
+        return admins.destroy({where: {email: process.env.ADMIN_EMAIL}});
     }
 }

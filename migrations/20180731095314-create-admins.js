@@ -28,11 +28,9 @@ module.exports = {
       },
       createdAt: {
         type: Sequelize.DATE,
-        allowNull: false
       },
       uptadetAt: { 
         type: Sequelize.DATE,
-        allowNull: false
       }
     });
   },
